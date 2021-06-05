@@ -4,8 +4,8 @@ public class Student {
     private Course[] coursesArray;
 
     public Student(String id, String name, Course[] courses) throws NameException, IDException, IllegalDividing {
-        this.id = id;
-        this.name = name;
+        this.id = setId(id);
+        this.name = setName(name);
         this.coursesArray = courses;
         coursesArray = new Course[3];
     }
@@ -21,9 +21,9 @@ public class Student {
         return name;
     }
 
-    public void setId(String id) throws IDException {
-        if (!(id.matches("[0-9]") || id.length() < 9)) {
-            throw new IDException(id + "must be longer then 8 number and must contain only numbers.\n");
+    public String setId(String id) throws IDException {
+        if (!(id.matches("[0-9]") && id.length() < 9)) {
+            throw new IDException("must be longer then 8 number and must contain only numbers.\n");
         } else {
             this.id = id;
         }
@@ -33,16 +33,18 @@ public class Student {
 //            System.out.println(e + "must be longer then 8 number and must contain only numbers.\n");
 //        }
 //        this.id = id;
+        return id;
     }
 
-    public void setName(String name) throws NameException {
+    public String setName(String name) throws NameException {
         char startingWith = name.charAt(0);
 
-        if (!(startingWith >= 'a' && startingWith < 'z' || startingWith >= 'A' && startingWith < 'Z')) {
-            throw new NameException(name + "is illegal, must start with english letter\n");
-        } else {
+        if (startingWith >= 'a' && startingWith < 'z' || startingWith >= 'A' && startingWith < 'Z') {
             this.name = name;
+        } else {
+            throw new NameException("ID is illegal, must start with english letter\n");
         }
+        return name;
     }
 
     public void setCoursesArray(Course[] coursesArray) {

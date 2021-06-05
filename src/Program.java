@@ -15,7 +15,7 @@ public class Program {
                     Scanner input = new Scanner(System.in);
                     System.out.println("Please enter student's name: \n");
                     String name = input.next();
-                    System.out.println("Please enter student's name: \n");
+                    System.out.println("Please enter student's id: \n");
                     String id = input.next();
                     student1 = new Student(id, name, null);
 
@@ -34,22 +34,18 @@ public class Program {
 
                     student1.findCourseAndPrint(DEVOPS);
 
-                } catch ( IDException | ArrayIndexOutOfBoundsException e)
+                } catch ( IDException | ArrayIndexOutOfBoundsException | ArithmeticException e)
                 {
                     System.out.println(e);
                 }
                 catch (NullPointerException e)
                 {
                     System.out.println("Error:Course " + DEVOPS.getCourseName() + " doesn’t exist for student " + student1.getName());
-                }
-                catch(ArithmeticException e)
-                {
-                    System.out.println(e);
                 } catch (IllegalDividing illegalDividing) {
                     illegalDividing.printStackTrace();
                 } finally
                 {
-                    System.out.println(DEVOPS);
+                   System.out.println(DEVOPS.describeCourse());
                 }
             }
     }

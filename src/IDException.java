@@ -1,5 +1,9 @@
 public class IDException extends Exception{
-    public IDException (String str){
-        super(str + ", is illegal, must start with english letter\n");
+    public IDException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public IDException(String cause) {
+        super(cause);
     }
 }

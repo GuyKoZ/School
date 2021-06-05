@@ -31,6 +31,6 @@ public class Course {
     }
 
     public String describeCourse(){
-        return (this.courseName + " final score is" + this.studentFinalScore + "in" + this.courseName +"course");
+        return ("The final score is " + this.studentFinalScore + " in " + this.courseName +" course \n");
     }
 }
