@@ -62,7 +62,7 @@ public class Student {
                 if (coursesArray[i] == null) {
                     coursesArray[i] = course;
                     flag++;
-                    System.out.println("A new course has been added to the course list");
+                    System.out.println("A new course has been added to the course list: " + course.getCourseName());
                 }
             }
         } catch (ArrayIndexOutOfBoundsException e) {
