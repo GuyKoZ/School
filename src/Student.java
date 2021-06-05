@@ -19,13 +19,18 @@ public class Student {
     public String getName() {
         return name;
     }
-    public Student (int id, String name){
-//        try {
-//
-//        }
-//        catch (MyException e){
-//
-//        }
+    public Student (String id, String name) throws MyException {
+        char startingWith = name.charAt(0);
+
+        if (!(startingWith >= 'a' && startingWith <'z' || startingWith >= 'A' && startingWith <'Z' )){
+            throw new MyException(name + "is illegal, must start with english letter\n");
+        }
+        else {
+
+        }
+        if (!id.matches("[0-9]") || id.length() < 9 ){
+            throw new MyException(id + "must be longer then 8 number and must contain only numbers.\n");
+        }
     }
     public void addCourse(Course course){
 
