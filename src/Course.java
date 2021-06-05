@@ -12,8 +12,25 @@ public class Course {
         this(otherCourse.courseName, otherCourse.studentFinalScore);
     }
 
-    public void describeCourse(){
-        Student student = new Student();
-        System.out.println(student.getName() + " final score is" + this.studentFinalScore + "in" + this.courseName +"course");
+    public Course() { }
+
+    public void setStudentFinalScore(int studentFinalScore) {
+        this.studentFinalScore = studentFinalScore;
+    }
+
+    public int getStudentFinalScore() {
+        return studentFinalScore;
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+
+    public String describeCourse(){
+        return (this.courseName + " final score is" + this.studentFinalScore + "in" + this.courseName +"course");
     }
 }
