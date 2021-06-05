@@ -1,5 +1,16 @@
 public class NameException extends Exception{
-    public NameException(String str){
-        super(str + ", name must start with english letter");
+    public NameException() {
+    }
+
+    public NameException(String message) {
+        super(message);
+    }
+
+    public NameException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public NameException(Throwable cause) {
+        super(cause);
     }
 }

@@ -22,10 +22,10 @@ public class Student {
     }
 
     public String setId(String id) throws IDException {
-        if (!(id.matches("[0-9]") && id.length() < 9)) {
-            throw new IDException("must be longer then 8 number and must contain only numbers.\n");
-        } else {
+        if (id.matches("[0-9]+") && id.length() >= 9) {
             this.id = id;
+        } else {
+            throw new IDException("must be longer then 8 number and must contain only numbers.\n");
         }
 //            Student student = new Student(id, name);
 //            System.out.println(student);
@@ -39,10 +39,10 @@ public class Student {
     public String setName(String name) throws NameException {
         char startingWith = name.charAt(0);
 
-        if (startingWith >= 'a' && startingWith < 'z' || startingWith >= 'A' && startingWith < 'Z') {
+        if ((startingWith >= 'a' && startingWith < 'z') || (startingWith >= 'A' && startingWith < 'Z')) {
             this.name = name;
         } else {
-            throw new NameException("ID is illegal, must start with english letter\n");
+            throw new NameException("name is illegal, must start with english letter\n");
         }
         return name;
     }
